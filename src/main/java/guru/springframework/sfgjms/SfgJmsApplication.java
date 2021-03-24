@@ -16,7 +16,6 @@ public class SfgJmsApplication {
 			.setJournalDirectory("target/data/journal")
 			.setSecurityEnabled(false)
 			.addAcceptorConfiguration("invm", "vm://0"));
-
 		server.start();
 
 		SpringApplication.run(SfgJmsApplication.class, args);

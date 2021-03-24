@@ -24,8 +24,8 @@ public class HelloMessageListener {
                        @Headers MessageHeaders headers,
                        Message message){
 
-//        System.out.println("listen -> I got a message");
-//        System.out.println(helloWorldMessage);
+        System.out.println("listen -> I got a message");
+        System.out.println(helloWorldMessage);
     }
 
     @JmsListener(destination = JmsConfig.MY_SEND_AND_RECEIVE_QUEUE)
@@ -33,14 +33,15 @@ public class HelloMessageListener {
                                @Headers MessageHeaders headers,
                                Message message) throws JMSException {
 
-        HelloWorldMessage replayMessage = HelloWorldMessage
-                .builder()
-                .id(UUID.randomUUID())
-                .message("Hello back!")
-                .build();
-        jmsTemplate.convertAndSend(message.getJMSReplyTo(), replayMessage);
-
-        System.out.println("listenForHello -> I got a message");
-        System.out.println(helloWorldMessage);
+        System.out.println("test");
+//        HelloWorldMessage replayMessage = HelloWorldMessage
+//                .builder()
+//                .id(UUID.randomUUID())
+//                .message("Hello back!")
+//                .build();
+//        jmsTemplate.convertAndSend(message.getJMSReplyTo(), replayMessage);
+//
+//        System.out.println("listenForHello -> I got a message");
+//        System.out.println(helloWorldMessage);
     }
 }
